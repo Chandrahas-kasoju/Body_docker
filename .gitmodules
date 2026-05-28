@@ -1,0 +1,9 @@
+[submodule "ros2_ws_body/src/hospibot_teleop"]
+	path = ros2_ws_body/src/hospibot_teleop
+	url = https://github.com/Chandrahas-kasoju/hospibot_teleop.git
+[submodule "ros2_ws_body/src/body_bringup"]
+	path = ros2_ws_body/src/body_bringup
+	url = https://github.com/Chandrahas-kasoju/body_bringup.git
+[submodule "ros2_ws_body/src/hospibot_led"]
+	path = ros2_ws_body/src/hospibot_led
+	url = https://github.com/Chandrahas-kasoju/hospibot_led.git
