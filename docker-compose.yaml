@@ -18,4 +18,4 @@ services:
     # privileged mode helps with hardware access on Raspberry Pi
     privileged: true
     volumes:
-      - ./ros2_ws_body/src:/root/ros2_ws/src
+      - ./ros2_ws_body:/root/ros2_ws

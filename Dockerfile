@@ -18,13 +18,13 @@ WORKDIR /root/ros2_ws/src
 
 RUN pip3 install pi5neo
 
-COPY ros2_ws_body/src /root/ros2_ws/src
+
 
 
 
 WORKDIR /root/ros2_ws
 
-RUN /bin/bash -c "source /opt/ros/humble/setup.bash && colcon build"
+
 
 RUN echo "source /opt/ros/humble/setup.bash" >> /root/.bashrc
 RUN echo "source /root/ros2_ws/install/setup.bash" >> /root/.bashrc
