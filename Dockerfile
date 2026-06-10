@@ -13,11 +13,16 @@ RUN apt-get update && apt-get install -y \
 RUN python3 -m pip install --user \
     'git+https://github.com/Chandrahas-kasoju/python-st3215.git'
 
-
+RUN mkdir piper-tts
 WORKDIR /root/ros2_ws/src
 
 RUN pip3 install pi5neo
+RUN pip3 install piper-tts
 
+WORKDIR /root/piper-tts
+RUN curl -L -o /root/piper-tts/da_DK/talesyntese-medium.onnx 
+RUN curl -L -o /root/piper-tts/da_DK/talesyntese-medium.onnx.json
+RUN apt-get update && apt-get install -y alsa-utils 
 
 
 
