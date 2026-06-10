@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -y \
 RUN python3 -m pip install --user \
     'git+https://github.com/Chandrahas-kasoju/python-st3215.git'
 
-RUN mkdir /root/piper-tts
+RUN mkdir -p /root/piper-tts/da_DK
 
 RUN pip3 install pi5neo
 RUN pip3 install piper-tts
