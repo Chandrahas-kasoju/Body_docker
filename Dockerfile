@@ -13,17 +13,16 @@ RUN apt-get update && apt-get install -y \
 RUN python3 -m pip install --user \
     'git+https://github.com/Chandrahas-kasoju/python-st3215.git'
 
-RUN mkdir -p /root/piper-tts/da_DK
 
 RUN pip3 install pi5neo
 RUN pip3 install piper-tts
 
+RUN mkdir -p /root/piper-tts
+RUN curl -L -o /root/piper-tts/en_GB-jenny_dioco-medium.onnx \
+    https://huggingface.co/rhasspy/piper-voices/resolve/main/en/en_GB/jenny_dioco/medium/en_GB-jenny_dioco-medium.onnx
 
-RUN curl -L -o /root/piper-tts/da_DK/talesyntese-medium.onnx \
-    https://huggingface.co/rhasspy/piper-voices/resolve/main/da/da_DK/talesyntese/medium/da_DK-talesyntese-medium.onnx
-
-RUN curl -L -o /root/piper-tts/da_DK/talesyntese-medium.onnx.json \
-    https://huggingface.co/rhasspy/piper-voices/resolve/main/da/da_DK/talesyntese/medium/da_DK-talesyntese-medium.onnx.json
+RUN curl -L -o /root/piper-tts/en_GB-jenny_dioco-medium.onnx.json \
+    https://huggingface.co/rhasspy/piper-voices/resolve/main/en/en_GB/jenny_dioco/medium/en_GB-jenny_dioco-medium.onnx.json
 RUN apt-get update && apt-get install -y alsa-utils 
 
 
