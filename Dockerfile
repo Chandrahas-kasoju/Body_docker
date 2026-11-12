@@ -16,6 +16,9 @@ RUN python3 -m pip install --user \
 
 RUN pip3 install pi5neo
 RUN pip3 install piper-tts
+# piper-tts pulls in NumPy 2, which breaks the apt python3-opencv build
+# (compiled against NumPy 1.x) that hospibot_teleop's web_server imports.
+RUN pip3 install "numpy<2"
 
 RUN mkdir -p /root/piper-tts
 RUN curl -L -o /root/piper-tts/en_GB-jenny_dioco-medium.onnx \
