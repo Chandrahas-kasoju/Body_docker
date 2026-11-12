@@ -42,4 +42,7 @@ COPY setup.bash /etc/turtlebot4/setup.bash
 COPY cyclonedds_pc.xml /etc/turtlebot4/cyclonedds_pc.xml
 RUN echo "source /etc/turtlebot4/setup.bash" >> /root/.bashrc
 
-CMD ["bash"]
+COPY start_body.sh /usr/local/bin/start_body.sh
+RUN chmod +x /usr/local/bin/start_body.sh
+
+CMD ["/usr/local/bin/start_body.sh"]
